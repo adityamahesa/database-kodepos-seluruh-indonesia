@@ -16,8 +16,7 @@ def _main(compressed=False):
             kodepos[record[3]][record[2]] = {}
         if record[1] not in kodepos[record[3]][record[2]].keys():
             kodepos[record[3]][record[2]][record[1]] = {}
-        kodepos_elemen = '%s - %s' % (record[4], record[0])
-        kodepos[record[3]][record[2]][record[1]][kodepos_elemen] = kodepos_elemen
+        kodepos[record[3]][record[2]][record[1]][record[0]] = int(record[4])
         print('done.')
     filename = 'kodepos.min.json' if compressed else 'kodepos.json'
     with open(filename, 'w') as f:
